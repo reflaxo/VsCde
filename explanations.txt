@@ -1,0 +1,16 @@
+NMEA structure
+$GPVTG 	Vector track and Speed over the Ground
+$GPGGA 	GGA - essential fix data which provide 3D location and accuracy data.
+$GPGLL 	GLL - Geographic Latitude and Longitude
+$GPGSA 	GSA - details on the nature of the fix. It includes the numbers of the satellites
+$GPGSV 	Detailed satelite data
+$GPRMC 	RMC - The recommended minimum
+
+
+First: multiplexing; it allows multiple applications to get sensor data without having to contend for a single serial device. Second: coping with the hideous gallimaufry of badly-designed protocols these devices use — regardless of device type, you will get data in a single well-documented format. Third: on operating systems with a hotplug facility (like Linux udev), GPSD will handle all the device management as USB devices are plugged in and unplugged.
+https://gpsd.gitlab.io/gpsd/client-howto.html#_what_gpsd_does_and_what_it_cannot_do
+https://www.linux-magazine.com/Issues/2018/210/Tutorial-gpsd
+
+get what it can from the socket, append that to a private buffer, and then consume as many JSON objects from the front of the buffer as it can. Any incomplete JSON is left in the private buffer to be completed and unpacked on a later go-round.
+
+https://gpsd.gitlab.io/gpsd/gpsfake.html
